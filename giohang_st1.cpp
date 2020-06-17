@@ -191,8 +191,8 @@ void ghifile(giohang_st *a, int n){
 	FILE* fOut=fopen(fname,"a");
 	for(int i=0;i<n;i++){
 		giohang_st cart=a[i];
-		fprintf(fOut,"%20s %20s %20s %10d %10d ",cart.TenKhachHang,cart.DiaChi,cart.TenSP,cart.soluong,cart.gia);
-		
+		fprintf(fOut,"\n%-10s %-10s %-10s %20s %20s \n","Ten KhacH Hang","Dia Chi","Ten San Pham", "gia", "soluong");
+		fprintf(fOut,"%-10s %-10s %-10s %22d %22d ",cart.TenKhachHang,cart.DiaChi,cart.TenSP,cart.soluong,cart.gia);
 	}
 	fclose(fOut);
 }
@@ -203,7 +203,7 @@ void docfile(giohang_st *a, int n){
 	for(;;){
 		giohang_st cart=a[i];
 		fprintf(fOut,"\n%-10s %-10s %-10s %20s %20s \n","Ten KhacH Hang","Dia Chi","Ten San Pham", "gia", "soluong");
-		fprintf(fOut,"%20s %20s %20s %10d %10d \n",cart.TenKhachHang,cart.DiaChi,cart.TenSP,&cart.soluong,&cart.gia);
+		fprintf(fOut,"%-10s %-10s %-10s %22d %22d ",cart.TenKhachHang,cart.DiaChi,cart.TenSP,cart.soluong,cart.gia);
 		if(feof(fOut)){
 			break;
 		}
